@@ -1,0 +1,15 @@
+{
+  "features": {
+    // Installs Ollama during the image build
+    "ghcr.io/devcontainers-contrib/features/ollama:1": {
+      // Optional: pre-pull one or more models while building
+      "models": "gemma3:1b"
+    }
+  },
+
+  // Forward the API port so you can hit it from your browser/local tools
+  "forwardPorts": [11434],
+
+  // Start the daemon as soon as the container is ready
+  "postCreateCommand": "ollama serve &"
+}
